@@ -1,0 +1,109 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "3ef3afd0348ab55f6a2fe7ea0238e4c1",
+    "content-hash": "06c19f514d6d75087728187e9b29f374",
+    "packages": [
+        {
+            "name": "ornament/ornament",
+            "version": "0.8.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ornament-orm/ornament.git",
+                "reference": "d7d070ad11f5731be141cf55c2756accaaf51402"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ornament-orm/ornament/zipball/d7d070ad11f5731be141cf55c2756accaaf51402",
+                "reference": "d7d070ad11f5731be141cf55c2756accaaf51402",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "zeptech/annotations": "^1.1"
+            },
+            "require-dev": {
+                "phpunit/dbunit": ">=1.2",
+                "phpunit/phpunit": ">=4.0"
+            },
+            "suggest": {
+                "monomelodies/dabble": "PDO-based database abstraction layer",
+                "monomelodies/dormant": "Dabble-specific Ornament adapter",
+                "monomelodies/formulaic": "PHP5 OO-forms with data binding for (Ornament) models"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ornament\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marijn Ophorst",
+                    "email": "marijn@monomelodies.nl"
+                }
+            ],
+            "description": "PHP5 ORM toolkit",
+            "keywords": [
+                "orm",
+                "php"
+            ],
+            "time": "2016-03-14 09:35:20"
+        },
+        {
+            "name": "zeptech/annotations",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pgraham/php-annotations.git",
+                "reference": "9cd042daa9ace184d04b49f0605edf73f19a9c71"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pgraham/php-annotations/zipball/9cd042daa9ace184d04b49f0605edf73f19a9c71",
+                "reference": "9cd042daa9ace184d04b49f0605edf73f19a9c71",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "zpt\\anno": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Philip Graham",
+                    "email": "philip@zeptech.ca"
+                }
+            ],
+            "description": "DOC Block annotation parsing for PHP",
+            "homepage": "https://github.com/pgraham/php-annotations",
+            "keywords": [
+                "annotations"
+            ],
+            "time": "2013-05-29 02:35:23"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
