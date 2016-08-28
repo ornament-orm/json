@@ -2,7 +2,7 @@
 
 namespace Ornament\Json;
 
-use Ornament;
+use Ornament\Ornament;
 use JsonSerializable;
 use ReflectionClass;
 use StdClass;
