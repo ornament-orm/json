@@ -38,11 +38,13 @@ trait Model
             }
             foreach ($refclass->getMethods() as $method) {
                 if (preg_match('@^get[A-Z]@', $method->getName())) {
-                    $name = Helper::normalize(preg_replace(
-                        '@^get@',
-                        '',
-                        $method->getName()
-                    ));
+                    $name = preg_replace_callback(
+                        "@([A-Z])@",
+                        function ($match) {
+                            return '_'.strtolower($match[1]);
+                        },
+                        substr($method->getName, 3)
+                    );
                     $callbacks[$name] = $method->getName();
                 }
             }
