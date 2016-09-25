@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "ornament/ornament": "^0.9.0"
+        "ornament/ornament": "^0.9.1"
     },
     "autoload": {
         "psr-4": {
