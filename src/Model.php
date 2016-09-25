@@ -43,7 +43,7 @@ trait Model
                         function ($match) {
                             return '_'.strtolower($match[1]);
                         },
-                        substr($method->getName, 3)
+                        substr($method->getName(), 3)
                     );
                     $callbacks[$name] = $method->getName();
                 }
