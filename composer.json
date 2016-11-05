@@ -16,5 +16,13 @@
         "psr-4": {
             "Ornament\\Json\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ornament\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "gentry/gentry": "^0.11.0"
     }
 }
