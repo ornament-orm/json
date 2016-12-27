@@ -28,11 +28,8 @@ trait Model
                 if ($prop->isStatic()) {
                     continue;
                 }
-                if (!$prop->isPublic()) {
-                    $anns = $annotations['properties'][$prop->getName()];
-                    if ($prop->getName()[0] == '_' || isset($anns['Private'])) {
-                        continue;
-                    }
+                if ($prop->isPrivate()) {
+                    continue;
                 }
                 $reflected[] = $prop->getName();
             }
