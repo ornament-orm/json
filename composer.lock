@@ -4,40 +4,37 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4f8128012e278a1a3bafc687ca980f27",
-    "content-hash": "00827c16ba764fd7477261475d87b13c",
+    "hash": "0b93421fcdd24dbf438dc0f2c1a3ff41",
+    "content-hash": "cd0516abcdc569f3c4605dbc082213ec",
     "packages": [
         {
-            "name": "ornament/ornament",
-            "version": "0.9.3",
+            "name": "ornament/core",
+            "version": "0.10.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ornament-orm/ornament.git",
-                "reference": "97123af9f941c1ccf888baddf15d9a92f5d8f547"
+                "url": "https://github.com/ornament-orm/core.git",
+                "reference": "18f887d123d6e26695b61d760302b7a6199510d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ornament-orm/ornament/zipball/97123af9f941c1ccf888baddf15d9a92f5d8f547",
-                "reference": "97123af9f941c1ccf888baddf15d9a92f5d8f547",
+                "url": "https://api.github.com/repos/ornament-orm/core/zipball/18f887d123d6e26695b61d760302b7a6199510d6",
+                "reference": "18f887d123d6e26695b61d760302b7a6199510d6",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4",
+                "php": ">=7",
                 "zeptech/annotations": "^1.1"
             },
             "require-dev": {
                 "gentry/gentry": "^0.10.0"
             },
             "suggest": {
-                "monolyth/dabble": "PDO-based database abstraction layer",
-                "monolyth/formulaic": "PHP5 OO-forms with data binding for (Ornament) models",
-                "monomelodies/dormant": "Dabble-specific Ornament adapter"
+                "monolyth/formulaic": "PHP5 OO-forms with data binding for (Ornament) models"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Ornament\\Ornament\\": "src/",
-                    "Ornament\\": "src/"
+                    "Ornament\\Core\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -50,12 +47,12 @@
                     "email": "marijn@monomelodies.nl"
                 }
             ],
-            "description": "PHP5 ORM toolkit",
+            "description": "PHP7 ORM toolkit, core package",
             "keywords": [
                 "orm",
                 "php"
             ],
-            "time": "2016-09-25 13:47:43"
+            "time": "2017-04-27 14:02:55"
         },
         {
             "name": "zeptech/annotations",
@@ -101,16 +98,16 @@
     "packages-dev": [
         {
             "name": "gentry/gentry",
-            "version": "0.11.0",
+            "version": "0.11.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gentry-php/gentry.git",
-                "reference": "40b5f9a835754a06ab38826a30621d47cd9ad095"
+                "reference": "95f3bcab1c6ba14865fe963807fee271497e407b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gentry-php/gentry/zipball/40b5f9a835754a06ab38826a30621d47cd9ad095",
-                "reference": "40b5f9a835754a06ab38826a30621d47cd9ad095",
+                "url": "https://api.github.com/repos/gentry-php/gentry/zipball/95f3bcab1c6ba14865fe963807fee271497e407b",
+                "reference": "95f3bcab1c6ba14865fe963807fee271497e407b",
                 "shasum": ""
             },
             "require": {
@@ -139,7 +136,7 @@
                 }
             ],
             "description": "PHP unit test generation tools",
-            "time": "2016-11-05 15:52:37"
+            "time": "2017-04-08 13:47:15"
         },
         {
             "name": "monomelodies/kingconf",
@@ -239,25 +236,31 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.1.6",
+            "version": "v3.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27"
+                "reference": "62b4cdb99d52cb1ff253c465eb1532a80cebb621"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/7ff51b06c6c3d5cc6686df69004a42c69df09e27",
-                "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/62b4cdb99d52cb1ff253c465eb1532a80cebb621",
+                "reference": "62b4cdb99d52cb1ff253c465eb1532a80cebb621",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.9"
             },
+            "require-dev": {
+                "symfony/console": "~2.8|~3.0"
+            },
+            "suggest": {
+                "symfony/console": "For validating YAML files using the lint command"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -284,7 +287,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-24 18:41:13"
+            "time": "2017-03-20 09:45:15"
         }
     ],
     "aliases": [],
