@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0b93421fcdd24dbf438dc0f2c1a3ff41",
-    "content-hash": "cd0516abcdc569f3c4605dbc082213ec",
+    "hash": "d06737dd027527b43b15f64bf383a486",
+    "content-hash": "1717e0212a306e035f1a6eebf5854128",
     "packages": [
         {
             "name": "ornament/core",
-            "version": "0.10.1",
+            "version": "0.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ornament-orm/core.git",
-                "reference": "18f887d123d6e26695b61d760302b7a6199510d6"
+                "reference": "dba24272d335755d452427587c074fbf8bb0fad0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ornament-orm/core/zipball/18f887d123d6e26695b61d760302b7a6199510d6",
-                "reference": "18f887d123d6e26695b61d760302b7a6199510d6",
+                "url": "https://api.github.com/repos/ornament-orm/core/zipball/dba24272d335755d452427587c074fbf8bb0fad0",
+                "reference": "dba24272d335755d452427587c074fbf8bb0fad0",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,7 @@
                 "zeptech/annotations": "^1.1"
             },
             "require-dev": {
-                "gentry/gentry": "^0.10.0"
+                "gentry/gentry": "^0.11.0"
             },
             "suggest": {
                 "monolyth/formulaic": "PHP5 OO-forms with data binding for (Ornament) models"
@@ -52,7 +52,7 @@
                 "orm",
                 "php"
             ],
-            "time": "2017-04-27 14:02:55"
+            "time": "2017-04-27 15:18:48"
         },
         {
             "name": "zeptech/annotations",
@@ -295,6 +295,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=7"
+    },
     "platform-dev": []
 }
