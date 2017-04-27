@@ -13,6 +13,9 @@
         "php": ">=7",
         "ornament/core": "^0.10.0"
     },
+    "require-dev": {
+        "gentry/gentry": "0.11.0"
+    },
     "autoload": {
         "psr-4": {
             "Ornament\\Json\\": "src/"
