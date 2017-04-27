@@ -5,7 +5,7 @@ namespace Ornament\Json;
 use Ornament\Core\ModelCheck;
 use StdClass;
 
-trait ExportOnlyAll
+trait ExportAll
 {
     use ModelCheck {
         ModelCheck::check as __ornamentExportAllCheck;
