@@ -4,47 +4,50 @@ namespace Ornament\Json;
 
 use Ornament\Core\Decorator;
 use JsonSerializable;
+use StdClass;
 
 class Property extends Decorator implements JsonSerializable
 {
-    private $__isNull = true;
-    private $__original;
+    private $decoded = null;
 
-    public function __construct($value)
+    public function __construct(StdClass $object, string $property)
     {
-        if (is_string($value)) {
-            $decoded = json_decode($value);
+        parent::__construct($object, $property);
+        if (is_string($object->$property)) {
+            $this->decoded = json_decode($object->$property);
         } else {
-            $decoded = (object) $value;
-        }
-        if ($decoded) {
-            $this->__isNull = false;
-            $this->__original = $decoded;
-            foreach ($decoded as $key => $item) {
-                $this->$key =& $decoded->$key;
-            }
-        } elseif (is_scalar($value)) {
-            $this->__original = $value;
-            $this->__isNull = !(bool)$value;
+            $this->decoded = (object)$object->$property;
         }
     }
 
-    public function __toString() : string
+    public function &__get(string $prop)
     {
-        if ($this->__isNull) {
-            return 'NULL';
-        } elseif (is_scalar($this->__original)) {
-            return "{$this->__original}";
+        if (is_object($this->decoded) && isset($this->decoded->$prop)) {
+            return $this->decoded->$prop;
         }
-        return json_encode((object) $this->__original);
+        if (is_array($this->decoded) && isset($this->decoded[$prop])) {
+            return $this->decoded[$prop];
+        }
+    }
+
+    public function __set(string $prop, $value)
+    {
+        if (is_object($this->decoded)) {
+            $this->decoded->$prop = $value;
+        } elseif (is_array($this->decoded)) {
+            $this->decoded[$prop] = $value;
+        }
+        $this->source = json_encode($this->decoded);
+    }
+
+    public function getSource() : string
+    {
+        return json_encode($this->decoded);
     }
 
     public function jsonSerialize()
     {
-        if ($this->__isNull) {
-            return null;
-        }
-        return $this->__original;
+        return $this->decoded;
     }
 }
 
