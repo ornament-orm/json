@@ -2,9 +2,10 @@
 
 namespace Ornament\Json;
 
+use Ornament\Core\Decorator;
 use JsonSerializable;
 
-class Property implements JsonSerializable
+class Property extends Decorator implements JsonSerializable
 {
     private $__isNull = true;
     private $__original;
