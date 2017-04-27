@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "ornament/ornament": "^0.9.1"
+        "php": ">=7",
+        "ornament/core": "^0.10.0"
     },
     "autoload": {
         "psr-4": {
