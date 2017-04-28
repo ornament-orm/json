@@ -40,6 +40,11 @@ class Property extends Decorator implements JsonSerializable
         $this->source = json_encode($this->decoded);
     }
 
+    public function __isset($prop)
+    {
+        return isset($this->decoded->$prop);
+    }
+
     public function getSource() : string
     {
         return json_encode($this->decoded);
