@@ -7,9 +7,7 @@ use StdClass;
 
 trait SerializeOnlyPublic
 {
-    use ModelCheck {
-        ModelCheck::check as __ornamentSerializeOnlyPublicCheck;
-    }
+    use ModelCheck;
 
     /**
      * Returns a StdClass model representation suitable for Json serialization.
@@ -20,7 +18,7 @@ trait SerializeOnlyPublic
      */
     public function jsonSerialize() : StdClass
     {
-        $this->__ornamentSerializeOnlyPublicCheck();
+        $this->__ornamentCheck();
         $annotations = $this->__ornamentalize();
         $export = new StdClass;
         foreach ($annotations['properties'] as $name => $anns) {

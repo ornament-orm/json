@@ -7,9 +7,8 @@ use StdClass;
 
 trait SerializeAll
 {
-    use ModelCheck {
-        ModelCheck::check as __ornamentSerializeAllCheck;
-    }
+    use ModelCheck;
+
     /**
      * Returns a StdClass model representation suitable for Json serialization.
      * This trait only exports both public and protected properties.
@@ -19,7 +18,7 @@ trait SerializeAll
      */
     public function jsonSerialize() : StdClass
     {
-        $this->__ornamentSerializeAllCheck();
+        $this->__ornamentCheck();
         $export = new StdClass;
         foreach ($this->__state as $name => $value) {
             $export->$name = $this->$name;
