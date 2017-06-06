@@ -20,7 +20,7 @@ class Property extends Decorator implements JsonSerializable
         }
     }
 
-    public function &__get(string $prop)
+    public function __get(string $prop)
     {
         if (is_object($this->decoded) && isset($this->decoded->$prop)) {
             return $this->decoded->$prop;
