@@ -5,10 +5,12 @@ namespace Ornament\Json;
 use Ornament\Core\Decorator;
 use JsonSerializable;
 use StdClass;
+use Iterator;
 
-class Property extends Decorator implements JsonSerializable
+class Property extends Decorator implements JsonSerializable, Iterator
 {
     private $decoded = null;
+    private $position = 0;
 
     public function __construct(StdClass $object, string $property)
     {
@@ -20,7 +22,7 @@ class Property extends Decorator implements JsonSerializable
         }
     }
 
-    public function &__get(string $prop)
+    public function __get(string $prop)
     {
         if (is_object($this->decoded) && isset($this->decoded->$prop)) {
             return $this->decoded->$prop;
@@ -53,6 +55,31 @@ class Property extends Decorator implements JsonSerializable
     public function jsonSerialize()
     {
         return $this->decoded;
+    }
+
+    public function current()
+    {
+        return $this->decoded[array_keys($this->decoded)[$this->position]];
+    }
+
+    public function key()
+    {
+        return array_keys($this->decoded)[$this->position];
+    }
+
+    public function next()
+    {
+        ++$this->position;
+    }
+
+    public function rewind()
+    {
+        $this->position = 0;
+    }
+
+    public function valid()
+    {
+        return isset(array_keys($this->decoded)[$this->position]);
     }
 }
 
