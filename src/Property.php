@@ -59,12 +59,13 @@ class Property extends Decorator implements JsonSerializable, Iterator
 
     public function current()
     {
-        return $this->decoded[array_keys($this->decoded)[$this->position]];
+        $decoded = (array)$this->decoded;
+        return $decoded[array_keys((array)$this->decoded)[$this->position]];
     }
 
     public function key()
     {
-        return array_keys($this->decoded)[$this->position];
+        return array_keys((array)$this->decoded)[$this->position];
     }
 
     public function next()
@@ -79,7 +80,7 @@ class Property extends Decorator implements JsonSerializable, Iterator
 
     public function valid()
     {
-        return isset(array_keys($this->decoded)[$this->position]);
+        return isset(array_keys((array)$this->decoded)[$this->position]);
     }
 }
 
