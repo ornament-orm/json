@@ -6,8 +6,9 @@ use Ornament\Core\Decorator;
 use JsonSerializable;
 use StdClass;
 use Iterator;
+use Countable;
 
-class Property extends Decorator implements JsonSerializable, Iterator
+class Property extends Decorator implements JsonSerializable, Iterator, Countable
 {
     private $decoded = null;
     private $position = 0;
@@ -81,6 +82,11 @@ class Property extends Decorator implements JsonSerializable, Iterator
     public function valid()
     {
         return isset(array_keys((array)$this->decoded)[$this->position]);
+    }
+
+    public function count()
+    {
+        return count($this->decoded);
     }
 }
 
