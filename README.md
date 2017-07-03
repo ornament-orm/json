@@ -20,3 +20,5 @@ Annotate your property with `@var Ornament\Json\Property`. If the value is
 input as a string, the decorator tries to `json_decode()` it. If the value is
 not a string to begin with, it is left alone.
 
+The decorator throws a `DomainException` if the string passed is not valid JSON.
+
