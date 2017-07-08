@@ -7,8 +7,9 @@ use JsonSerializable;
 use StdClass;
 use Iterator;
 use Countable;
+use ArrayAccess;
 
-class Property extends Decorator implements JsonSerializable, Iterator, Countable
+class Property extends Decorator implements JsonSerializable, Iterator, Countable, ArrayAccess
 {
     private $decoded = null;
     private $position = 0;
@@ -19,7 +20,7 @@ class Property extends Decorator implements JsonSerializable, Iterator, Countabl
         if (is_string($object->$property)) {
             $this->decoded = json_decode($object->$property);
         } else {
-            $this->decoded = (object)$object->$property;
+            $this->decoded = $object->$property;
         }
     }
 
@@ -87,6 +88,45 @@ class Property extends Decorator implements JsonSerializable, Iterator, Countabl
     public function count()
     {
         return count($this->decoded);
+    }
+
+    public function offsetExists($offset) : bool
+    {
+        if (is_object($this->decoded)) {
+            return isset($this->decoded->$offset);
+        } elseif (is_array($this->decoded)) {
+            return isset($this->decoded[$offset]);
+        }
+        return false;
+    }
+
+    public function offsetGet($offset)
+    {
+        if (is_object($this->decoded)) {
+            return $this->decoded->$offset;
+        } elseif (is_array($this->decoded)) {
+            return $this->decoded[$offset];
+        } else {
+            return null;
+        }
+    }
+
+    public function offsetSet($offset, $value)
+    {
+        if (is_object($this->decoded)) {
+            $this->decoded->$offset = $value;
+        } elseif (is_array($this->decoded)) {
+            $this->decoded[$offset] = $value;
+        }
+    }
+
+    public function offsetUnset($offset)
+    {
+        if (is_object($this->decoded)) {
+            unset($this->decoded->$offset);
+        } elseif (is_array($this->decoded)) {
+           unset($this->decoded[$offset]);
+        }
     }
 }
 
