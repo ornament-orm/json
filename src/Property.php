@@ -8,6 +8,7 @@ use StdClass;
 use Iterator;
 use Countable;
 use ArrayAccess;
+use DomainException;
 
 class Property extends Decorator implements JsonSerializable, Iterator, Countable, ArrayAccess
 {
@@ -18,6 +19,9 @@ class Property extends Decorator implements JsonSerializable, Iterator, Countabl
     {
         parent::__construct($object, $property);
         if (is_string($object->$property)) {
+            if (!($decoded = json_decode($object->$property))) {
+                throw new DomainException($object->$property);
+            }
             $this->decoded = json_decode($object->$property);
         } else {
             $this->decoded = $object->$property;
