@@ -24,7 +24,7 @@ class Property extends Decorator implements JsonSerializable, Iterator, Countabl
             }
             $this->decoded = json_decode($object->$property);
         } else {
-            $this->decoded = $object->$property;
+            $this->decoded = $object->$property ?? new StdClass;
         }
     }
 
