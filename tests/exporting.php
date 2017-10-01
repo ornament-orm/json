@@ -1,23 +1,18 @@
 <?php
 
-namespace Ornament\Tests;
-
 use Ornament\Core\Model;
 use Ornament\Json\SerializeOnlyPublic;
 use Ornament\Json\SerializeAll;
-use StdClass;
 
 /**
  * Test exporting via the `jsonSerialize` traits.
  */
-class Exporting
-{
+return function () : Generator {
     /**
      * With the correct trait applied, only public properties should be exported
-     * {?} and not protected ones {?}.
+     * and not protected ones.
      */
-    public function testExportsOnlyPublicProperties()
-    {
+    yield function () {
         $model = new class() extends StdClass {
             use Model;
             use SerializeOnlyPublic;
@@ -25,16 +20,15 @@ class Exporting
             public $foo = 1;
             protected $bar = 2;
         };
-        yield assert(isset($model->jsonSerialize()->foo));
-        yield assert(!isset($model->jsonSerialize()->bar));
-    }
+        assert(isset($model->jsonSerialize()->foo));
+        assert(!isset($model->jsonSerialize()->bar));
+    };
 
     /**
      * With the correct trait applied, both public properties should be exported
-     * {?} as well as protected ones {?}.
+     * as well as protected ones.
      */
-    public function testExportsAllProperties()
-    {
+    yield function () {
         $model = new class() extends StdClass {
             use Model;
             use SerializeAll;
@@ -42,8 +36,8 @@ class Exporting
             public $foo = 1;
             protected $bar = 2;
         };
-        yield assert(isset($model->jsonSerialize()->foo));
-        yield assert(isset($model->jsonSerialize()->bar));
-    }
-}
+        assert(isset($model->jsonSerialize()->foo));
+        assert(isset($model->jsonSerialize()->bar));
+    };
+};
 
