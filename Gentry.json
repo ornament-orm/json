@@ -1,6 +1,4 @@
 {
     "src": "src",
-    "tests": "tests",
-    "includePath": [],
-    "ignore": ".*?Controller$"
+    "test": "vendor/bin/toast"
 }
