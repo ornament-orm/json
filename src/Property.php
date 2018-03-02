@@ -15,7 +15,7 @@ class Property extends Decorator implements JsonSerializable
     {
         parent::__construct($object, $property);
         if (is_string($object->$property)) {
-            if (!($decoded = json_decode($object->$property))) {
+            if (null === ($decoded = json_decode($object->$property))) {
                 throw new DomainException($object->$property);
             }
             $this->decoded = json_decode($object->$property);
