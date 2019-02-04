@@ -6,10 +6,25 @@ use Ornament\Core\Decorator;
 use JsonSerializable;
 use StdClass;
 use DomainException;
+use Countable;
+use Iterator;
 
-class Property extends Decorator implements JsonSerializable
+class Property extends Decorator implements JsonSerializable, Countable, Iterator
 {
+    /**
+     * @var mixed
+     */
     private $decoded = null;
+
+    /**
+     * @var array
+     */
+    private $keys = [];
+
+    /**
+     * @var int
+     */
+    private $position = 0;
 
     public function __construct(object $object, string $property)
     {
@@ -22,6 +37,7 @@ class Property extends Decorator implements JsonSerializable
         } else {
             $this->decoded = $object->$property ?? new StdClass;
         }
+        $this->keys = array_keys((array)$this->decoded);
     }
 
     public function __get(string $prop)
@@ -57,6 +73,37 @@ class Property extends Decorator implements JsonSerializable
     public function jsonSerialize()
     {
         return $this->decoded;
+    }
+
+    public function count() : int
+    {
+        return count((array)$this->decoded);
+    }
+
+    public function current()
+    {
+        $values = (array)$this->decoded;
+        return $values[$this->keys[$this->position]];
+    }
+
+    public function key()
+    {
+        return $this->keys[$this->position];
+    }
+
+    public function next() : void
+    {
+        ++$this->position;
+    }
+
+    public function rewind() : void
+    {
+        $this->position = 0;
+    }
+
+    public function valid() : bool
+    {
+        return isset($this->keys[$this->position]);
     }
 }
 
