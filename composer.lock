@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "04385882221d00f98d309252092a6bda",
+    "content-hash": "87bbdfcbd90fb37cda7bf1004be2dce2",
     "packages": [
         {
             "name": "ornament/core",
-            "version": "0.12.0",
+            "version": "0.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ornament-orm/core.git",
-                "reference": "408bb29acf66f55f50dd2aeb91a066278823168c"
+                "reference": "b573c89d11a183c2e0e11afe8b6fdd56b2cd5ba8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ornament-orm/core/zipball/408bb29acf66f55f50dd2aeb91a066278823168c",
-                "reference": "408bb29acf66f55f50dd2aeb91a066278823168c",
+                "url": "https://api.github.com/repos/ornament-orm/core/zipball/b573c89d11a183c2e0e11afe8b6fdd56b2cd5ba8",
+                "reference": "b573c89d11a183c2e0e11afe8b6fdd56b2cd5ba8",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +52,7 @@
                 "orm",
                 "php"
             ],
-            "time": "2019-02-24T13:04:28+00:00"
+            "time": "2019-03-12T09:01:24+00:00"
         },
         {
             "name": "zeptech/annotations",
