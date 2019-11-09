@@ -10,8 +10,8 @@ use Ornament\Json;
 /**
  * Test the JSON decorator.
  */
-return function ($test) : Generator {
-    $test->beforeEach(function () use (&$model) {
+return function () : Generator {
+    $this->beforeEach(function () use (&$model) {
         $model = new class() extends StdClass {
             use Model;
 
