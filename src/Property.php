@@ -26,16 +26,16 @@ class Property extends Decorator implements JsonSerializable, Countable, Iterato
      */
     private $position = 0;
 
-    public function __construct(object $object, string $property)
+    public function __construct($value)
     {
-        parent::__construct($object, $property);
-        if (is_string($object->$property)) {
-            if (null === ($decoded = json_decode($object->$property))) {
-                throw new DomainException($object->$property);
+        parent::__construct($value);
+        if (is_string($value)) {
+            if (null === ($decoded = json_decode($value))) {
+                throw new DomainException($value);
             }
-            $this->decoded = json_decode($object->$property);
+            $this->decoded = json_decode($value);
         } else {
-            $this->decoded = $object->$property ?? new StdClass;
+            $this->decoded = $value ?? new StdClass;
         }
         $this->keys = array_keys((array)$this->decoded);
     }
