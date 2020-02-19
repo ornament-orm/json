@@ -2,7 +2,9 @@
 
 namespace Ornament\Json;
 
-use StdClass;
+use stdClass;
+use ReflectionClass;
+use ReflectionProperty;
 
 trait SerializeAll
 {
@@ -12,10 +14,12 @@ trait SerializeAll
      *
      * @return StdClass
      */
-    public function jsonSerialize() : StdClass
+    public function jsonSerialize() : stdClass
     {
+        $reflection = new ReflectionClass($this);
         $export = new StdClass;
-        foreach ($this->__state as $name => $value) {
+        foreach ($reflection->getProperties((ReflectionProperty::IS_PUBLIC | ReflectionProperty::IS_PROTECTED) & ~ReflectionProperty::IS_STATIC) as $property) {
+            $name = $property->getName();
             $export->$name = $this->$name;
         }
         return $export;
