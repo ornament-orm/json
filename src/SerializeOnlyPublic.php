@@ -2,24 +2,25 @@
 
 namespace Ornament\Json;
 
-use StdClass;
+use stdClass;
+use ReflectionClass;
+use ReflectionProperty;
 
 trait SerializeOnlyPublic
 {
     /**
-     * Returns a StdClass model representation suitable for Json serialization.
+     * Returns a stdClass model representation suitable for Json serialization.
      * This trait only exports public properties.
      *
-     * @return StdClass
+     * @return stdClass
      */
-    public function jsonSerialize() : StdClass
+    public function jsonSerialize() : stdClass
     {
-        $annotations = $this->__ornamentalize();
-        $export = new StdClass;
-        foreach ($annotations['properties'] as $name => $anns) {
-            if (!$anns['readOnly']) {
-                $export->$name = $this->$name;
-            }
+        $reflection = new ReflectionClass($this);
+        $export = new stdClass;
+        foreach ($reflection->getProperties(ReflectionProperty::IS_PUBLIC & ~ReflectionProperty::IS_STATIC) as $property) {
+            $name = $property->getName();
+            $export->$name = $this->$name;
         }
         return $export;
     }
