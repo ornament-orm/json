@@ -20,7 +20,7 @@ trait SerializeOnlyPublic
         $export = new stdClass;
         foreach ($reflection->getProperties(ReflectionProperty::IS_PUBLIC & ~ReflectionProperty::IS_STATIC) as $property) {
             $name = $property->getName();
-            $export->$name = $this->$name;
+            $export->$name = $this->$name ?? null;
         }
         return $export;
     }
