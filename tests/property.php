@@ -12,7 +12,7 @@ use Ornament\Json;
  */
 return function () : Generator {
     $this->beforeEach(function () use (&$model) {
-        $model = new class() extends StdClass {
+        $model = new class(['test' => '{"foo":"bar"}']) extends StdClass {
             use Model;
 
             /**
@@ -20,7 +20,6 @@ return function () : Generator {
              */
             public $test;
         };
-        $model->test = '{"foo":"bar"}';
     });
     /** A property annotated as Json should get decorated as the correct object and retain its data. */
     yield function () use (&$model) {
