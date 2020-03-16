@@ -22,6 +22,10 @@ trait SerializeOnlyPublic
             $name = $property->getName();
             $export->$name = $this->$name ?? null;
         }
+        $cache = $this->__getModelPropertyDecorations();
+        foreach ($cache['methods'] as $prop => $getter) {
+            $export->$prop = $this->$getter($prop);
+        }
         return $export;
     }
 }
