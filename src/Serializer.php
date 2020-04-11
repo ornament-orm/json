@@ -7,7 +7,7 @@ use stdClass;
 
 trait Serializer
 {
-    private function serialized(int $flags) : stdClass
+    private function jsonSerialized(int $flags) : stdClass
     {
         $reflection = new ReflectionClass($this);
         $export = new StdClass;
