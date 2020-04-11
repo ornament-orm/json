@@ -17,7 +17,7 @@ trait SerializeOnlyPublic
      */
     public function jsonSerialize() : stdClass
     {
-        return $this->serialized(ReflectionProperty::IS_PUBLIC & ~ReflectionProperty::IS_STATIC);
+        return $this->jsonSerialized(ReflectionProperty::IS_PUBLIC & ~ReflectionProperty::IS_STATIC);
     }
 }
 
