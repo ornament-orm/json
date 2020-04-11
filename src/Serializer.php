@@ -19,5 +19,6 @@ trait Serializer
             $export->$prop = $this->$getter($prop);
         }
         return $export;
+    }
 }
 
