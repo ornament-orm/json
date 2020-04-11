@@ -3,10 +3,11 @@
 namespace Ornament\Json;
 
 use ReflectionClass;
+use stdClass;
 
 trait Serializer
 {
-    private function serialized(int $flags)
+    private function serialized(int $flags) : stdClass
     {
         $reflection = new ReflectionClass($this);
         $export = new StdClass;
