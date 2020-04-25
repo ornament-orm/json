@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "ornament/core",
-            "version": "0.15.3",
+            "version": "0.15.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ornament-orm/core.git",
-                "reference": "8e6ac948b20ac098b0d68a9bacdfedcbdf057c02"
+                "reference": "6406c86f5ac236c34207cafcc896a4dbbf892be3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ornament-orm/core/zipball/8e6ac948b20ac098b0d68a9bacdfedcbdf057c02",
-                "reference": "8e6ac948b20ac098b0d68a9bacdfedcbdf057c02",
+                "url": "https://api.github.com/repos/ornament-orm/core/zipball/6406c86f5ac236c34207cafcc896a4dbbf892be3",
+                "reference": "6406c86f5ac236c34207cafcc896a4dbbf892be3",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +52,7 @@
                 "orm",
                 "php"
             ],
-            "time": "2020-03-16T09:36:37+00:00"
+            "time": "2020-04-25T05:15:12+00:00"
         },
         {
             "name": "zeptech/annotations",
