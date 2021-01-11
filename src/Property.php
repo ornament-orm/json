@@ -57,7 +57,7 @@ class Property extends Decorator implements JsonSerializable, Countable, Iterato
         } elseif (is_array($this->decoded)) {
             $this->decoded[$prop] = $value;
         }
-        $this->source = json_encode($this->decoded);
+        $this->_source = json_encode($this->decoded);
     }
 
     public function __isset(string $prop)
