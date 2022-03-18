@@ -70,7 +70,7 @@ class Property extends Decorator implements JsonSerializable, Countable, Iterato
         return json_encode($this->decoded);
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize() : mixed
     {
         return $this->decoded;
     }
@@ -80,13 +80,13 @@ class Property extends Decorator implements JsonSerializable, Countable, Iterato
         return count((array)$this->decoded);
     }
 
-    public function current()
+    public function current() : mixed
     {
         $values = (array)$this->decoded;
         return $values[$this->keys[$this->position]];
     }
 
-    public function key()
+    public function key() : mixed
     {
         return $this->keys[$this->position];
     }
