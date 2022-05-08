@@ -14,7 +14,7 @@
         "ornament/core": "^0.15.0"
     },
     "require-dev": {
-        "gentry/gentry": "^0.13.0",
+        "gentry/gentry": "^0.14.0",
         "toast/unit": "^2.0"
     },
     "autoload": {
