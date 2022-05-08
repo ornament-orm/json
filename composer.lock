@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05d1adc90ecf3b0ac55e80a9a4152f57",
+    "content-hash": "d23311d1d45b3930785a5579a29eb0ec",
     "packages": [
         {
             "name": "ornament/core",
@@ -106,21 +106,21 @@
     "packages-dev": [
         {
             "name": "codger/generate",
-            "version": "0.9.9",
+            "version": "0.9.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codger-php/generate.git",
-                "reference": "5ebf7282db1a0af18fe114dca08eba8f6d06af5a"
+                "reference": "1139dd74e6fd35d2832fd35c294f8f3ea0217fa9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codger-php/generate/zipball/5ebf7282db1a0af18fe114dca08eba8f6d06af5a",
-                "reference": "5ebf7282db1a0af18fe114dca08eba8f6d06af5a",
+                "url": "https://api.github.com/repos/codger-php/generate/zipball/1139dd74e6fd35d2832fd35c294f8f3ea0217fa9",
+                "reference": "1139dd74e6fd35d2832fd35c294f8f3ea0217fa9",
                 "shasum": ""
             },
             "require": {
-                "monolyth/cliff": "^0.6.0",
-                "php": ">=7.3",
+                "monolyth/cliff": "^0.7.1",
+                "php": ">=7.4",
                 "twig/twig": "^2|^3"
             },
             "require-dev": {
@@ -149,9 +149,9 @@
             "description": "Code generator, base framework",
             "support": {
                 "issues": "https://github.com/codger-php/generate/issues",
-                "source": "https://github.com/codger-php/generate/tree/master"
+                "source": "https://github.com/codger-php/generate/tree/0.9.10"
             },
-            "time": "2020-01-03T13:01:51+00:00"
+            "time": "2021-01-10T17:56:20+00:00"
         },
         {
             "name": "codger/php",
@@ -598,26 +598,26 @@
         },
         {
             "name": "gentry/gentry",
-            "version": "0.13.16",
+            "version": "0.14.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gentry-php/gentry.git",
-                "reference": "3cc5a3732e139021e3b697abf98da987493df4a1"
+                "reference": "310dea198b7eb226cef37ecc5c215f8dd70f074b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gentry-php/gentry/zipball/3cc5a3732e139021e3b697abf98da987493df4a1",
-                "reference": "3cc5a3732e139021e3b697abf98da987493df4a1",
+                "url": "https://api.github.com/repos/gentry-php/gentry/zipball/310dea198b7eb226cef37ecc5c215f8dd70f074b",
+                "reference": "310dea198b7eb226cef37ecc5c215f8dd70f074b",
                 "shasum": ""
             },
             "require": {
                 "codger/php": "^0.9.7",
-                "monolyth/cliff": "^0.6.0",
+                "monolyth/cliff": "^0.7.0",
                 "monomelodies/kingconf": "^1.1.0",
                 "monomelodies/reflex": "^0.3.0",
-                "php": ">=7.3",
+                "php": ">=7.4",
                 "simoneast/simple-ansi-colors": "^1.0",
-                "twig/twig": ">=1.0",
+                "twig/twig": "^2.0|^3.0",
                 "zeptech/annotations": "^1.0.0"
             },
             "require-dev": {
@@ -645,9 +645,9 @@
             "description": "PHP unit test generation tools",
             "support": {
                 "issues": "https://github.com/gentry-php/gentry/issues",
-                "source": "https://github.com/gentry-php/gentry/tree/0.13.16"
+                "source": "https://github.com/gentry-php/gentry/tree/0.14.5"
             },
-            "time": "2019-12-24T01:33:04+00:00"
+            "time": "2021-01-11T08:40:38+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -721,26 +721,26 @@
         },
         {
             "name": "monolyth/cliff",
-            "version": "0.6.1",
+            "version": "0.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/monolyth-php/cliff.git",
-                "reference": "0b9656cdb6d66285ca185f0fc041e5d3ec3ae6c7"
+                "reference": "929d08d7c8664984908ba7a2720d15f117519462"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/monolyth-php/cliff/zipball/0b9656cdb6d66285ca185f0fc041e5d3ec3ae6c7",
-                "reference": "0b9656cdb6d66285ca185f0fc041e5d3ec3ae6c7",
+                "url": "https://api.github.com/repos/monolyth-php/cliff/zipball/929d08d7c8664984908ba7a2720d15f117519462",
+                "reference": "929d08d7c8664984908ba7a2720d15f117519462",
                 "shasum": ""
             },
             "require": {
                 "monomelodies/reflex": "^0.3.0",
-                "php": ">=7.3",
+                "php": ">=7.4",
                 "ulrichsg/getopt-php": "^3.2",
                 "zeptech/annotations": "^1.1"
             },
             "require-dev": {
-                "toast/unit": "^2.0"
+                "phpunit/phpunit": "^9.5"
             },
             "bin": [
                 "bin/cliff"
@@ -765,9 +765,9 @@
             "description": "Command line interface for Monolyth unframework",
             "support": {
                 "issues": "https://github.com/monolyth-php/cliff/issues",
-                "source": "https://github.com/monolyth-php/cliff/tree/0.6.1"
+                "source": "https://github.com/monolyth-php/cliff/tree/0.7.1"
             },
-            "time": "2020-01-01T12:27:13+00:00"
+            "time": "2021-01-10T16:13:25+00:00"
         },
         {
             "name": "monomelodies/kingconf",
@@ -2219,22 +2219,22 @@
         },
         {
             "name": "toast/unit",
-            "version": "2.1.5",
+            "version": "2.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/toast-php/unit.git",
-                "reference": "f9503a18f9739dce6d07b74399e888bbaba7d858"
+                "reference": "9088061d73356f543a2cfe26cc8472394b1d4907"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toast-php/unit/zipball/f9503a18f9739dce6d07b74399e888bbaba7d858",
-                "reference": "f9503a18f9739dce6d07b74399e888bbaba7d858",
+                "url": "https://api.github.com/repos/toast-php/unit/zipball/9088061d73356f543a2cfe26cc8472394b1d4907",
+                "reference": "9088061d73356f543a2cfe26cc8472394b1d4907",
                 "shasum": ""
             },
             "require": {
-                "monolyth/cliff": "^0.6.0",
+                "monolyth/cliff": "^0.7.0",
                 "monomelodies/kingconf": "^1.1.0",
-                "php": ">=7.2",
+                "php": ">=7.4",
                 "simoneast/simple-ansi-colors": "^1.0"
             },
             "bin": [
@@ -2259,9 +2259,9 @@
             "description": "Super-simple unit testing for PHP7",
             "support": {
                 "issues": "https://github.com/toast-php/unit/issues",
-                "source": "https://github.com/toast-php/unit/tree/master"
+                "source": "https://github.com/toast-php/unit/tree/2.1.7"
             },
-            "time": "2020-02-22T14:29:32+00:00"
+            "time": "2022-01-02T13:52:06+00:00"
         },
         {
             "name": "twig/twig",
@@ -2396,7 +2396,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.3"
+        "php": ">=8.1"
     },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"
