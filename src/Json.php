@@ -9,7 +9,7 @@ use DomainException;
 use Countable;
 use Iterator;
 
-class Property extends Decorator implements JsonSerializable, Countable, Iterator
+class Json extends Decorator implements JsonSerializable, Countable, Iterator
 {
     /**
      * @var mixed
