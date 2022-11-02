@@ -5,7 +5,7 @@ namespace Ornament\Tests;
 use Generator;
 use StdClass;
 use Ornament\Core\Model;
-use Ornament\Json;
+use Ornament\Json\Json;
 
 /**
  * Test the JSON decorator.
@@ -15,15 +15,12 @@ return function () : Generator {
         $model = new class(['test' => '{"foo":"bar"}']) extends StdClass {
             use Model;
 
-            /**
-             * @var Ornament\Json\Property
-             */
-            public $test;
+            public Json $test;
         };
     });
     /** A property annotated as Json should get decorated as the correct object and retain its data. */
     yield function () use (&$model) {
-        assert($model->test instanceof Json\Property);
+        assert($model->test instanceof Json);
         assert($model->test->foo == 'bar');
     };
     /** After changing the JSON, we still have the updated information. */
