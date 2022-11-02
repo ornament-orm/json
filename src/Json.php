@@ -8,6 +8,7 @@ use StdClass;
 use DomainException;
 use Countable;
 use Iterator;
+use ReflectionProperty;
 
 class Json extends Decorator implements JsonSerializable, Countable, Iterator
 {
@@ -26,16 +27,15 @@ class Json extends Decorator implements JsonSerializable, Countable, Iterator
      */
     private $position = 0;
 
-    public function __construct($value)
+    public function __construct(protected mixed $_source, protected ReflectionProperty $_target)
     {
-        parent::__construct($value);
-        if (is_string($value)) {
-            if (null === ($decoded = json_decode($value))) {
-                throw new DomainException($value);
+        if (is_string($_source)) {
+            if (null === ($decoded = json_decode($_source))) {
+                throw new DomainException($_source);
             }
-            $this->decoded = json_decode($value);
+            $this->decoded = json_decode($_source);
         } else {
-            $this->decoded = $value ?? new StdClass;
+            $this->decoded = $_source ?? new StdClass;
         }
         $this->keys = array_keys((array)$this->decoded);
     }
