@@ -2,6 +2,7 @@
 
 namespace Ornament\Json;
 
+use Ornament\Core\Helpers;
 use ReflectionClass;
 use stdClass;
 
@@ -11,7 +12,7 @@ trait Serializer
     {
         static $cache;
         if (!isset($cache)) {
-            $cache = $this->__getModelPropertyDecorations();
+            $cache = Helpers::getModelPropertyDecorations($this);
         }
         $reflection = new ReflectionClass($this);
         $export = new StdClass;
