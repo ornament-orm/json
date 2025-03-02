@@ -13,7 +13,7 @@ return function () : Generator {
      * and not protected ones.
      */
     yield function () {
-        $model = new class() extends StdClass {
+        $model = new class() extends StdClass implements JsonSerializable {
             use Model;
             use SerializeOnlyPublic;
 
@@ -29,7 +29,7 @@ return function () : Generator {
      * as well as protected ones.
      */
     yield function () {
-        $model = new class() extends StdClass {
+        $model = new class() extends StdClass implements JsonSerializable {
             use Model;
             use SerializeAll;
 
