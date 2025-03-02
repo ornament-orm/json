@@ -11,22 +11,13 @@ use ReflectionProperty;
 
 class Json implements JsonSerializable, Countable, Iterator
 {
-    /**
-     * @var mixed
-     */
-    private $decoded = null;
+    private array|object $decoded;
 
-    /**
-     * @var array
-     */
-    private $keys = [];
+    private array $keys = [];
 
-    /**
-     * @var int
-     */
-    private $position = 0;
+    private int $position = 0;
 
-    public function __construct(protected mixed $_source)
+    public function __construct(protected array|object|string $_source)
     {
         if (is_string($_source)) {
             if (null === ($decoded = json_decode($_source))) {
