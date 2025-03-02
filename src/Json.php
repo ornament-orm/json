@@ -2,7 +2,6 @@
 
 namespace Ornament\Json;
 
-use Ornament\Core\Decorator;
 use JsonSerializable;
 use StdClass;
 use DomainException;
@@ -10,7 +9,7 @@ use Countable;
 use Iterator;
 use ReflectionProperty;
 
-class Json extends Decorator implements JsonSerializable, Countable, Iterator
+class Json implements JsonSerializable, Countable, Iterator
 {
     /**
      * @var mixed
@@ -27,7 +26,7 @@ class Json extends Decorator implements JsonSerializable, Countable, Iterator
      */
     private $position = 0;
 
-    public function __construct(protected mixed $_source, protected ReflectionProperty $_target)
+    public function __construct(protected mixed $_source)
     {
         if (is_string($_source)) {
             if (null === ($decoded = json_decode($_source))) {
@@ -104,6 +103,11 @@ class Json extends Decorator implements JsonSerializable, Countable, Iterator
     public function valid() : bool
     {
         return isset($this->keys[$this->position]);
+    }
+
+    public function __toString() : string
+    {
+        return json_encode($this->decoded);
     }
 }
 
